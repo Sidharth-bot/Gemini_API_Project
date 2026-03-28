@@ -1,11 +1,12 @@
-import google.generativeai as genai
+from google import genai
 
-# Use your API Key from the Google AI Studio screenshot
-genai.configure(api_key="AIzaSyBsGscZ12ZyTAWFY1eeWEa5GddAawb7o8I")
+# Initialize the client with your API Key
+client = genai.Client(api_key="AIzaSyBsGscZ12ZyTAWFY1eeWEa5GddAawb7o8I")
 
-model = genai.GenerativeModel('gemini-1.5-flash')
+# We are using 'gemini-3-flash-preview' as seen in your AI Studio screenshot
+response = client.models.generate_content(
+    model='gemini-3-flash-preview',
+    contents="I am a Data Quality Analyst at ICE. Suggest a Python logic to identify 'stale' price feeds in FX data."
+)
 
-prompt = "I am a Data Quality Analyst at ICE. Suggest a Python script logic to check for outliers in FX tick data."
-
-response = model.generate_content(prompt)
 print(response.text)
