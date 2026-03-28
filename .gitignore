@@ -1,1 +1,22 @@
+# Credentials & Secrets
 Key.env
+.env
+*.pem
+
+# PyCharm / IDE folders
+.idea/
+.vscode/
+*.swp
+
+# Python leftovers
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+build/
+dist/
+
+# Data files (Don't push these if they are huge or sensitive)
+fx_feeds.csv
+*.log
